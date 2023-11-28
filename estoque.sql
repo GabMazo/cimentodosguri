@@ -1,8 +1,8 @@
 create database estoque;
 use estoque;
 create table produto(
-id bigint auto_increment PRIMARY KEY,
-nome varchar(250),
-preco double,
-quantidade int
+id int auto_increment primary key,
+nome varchar(255) not null,
+preco double not null,
+quantidade varchar(255)
 );

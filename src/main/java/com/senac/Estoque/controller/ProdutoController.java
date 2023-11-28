@@ -1,41 +1,35 @@
 package com.senac.Estoque.controller;
 
-
 import com.senac.Estoque.model.Produto;
 import com.senac.Estoque.repository.ProdutoRepository;
-import com.senac.Estoque.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
-
 @Controller
-@RequestMapping("/estoque")
+@RequestMapping("/produtos")
 public class ProdutoController {
 
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    @GetMapping("/produto")
+    @GetMapping
     public String listarProdutos(Model model) {
         model.addAttribute("produtos", produtoRepository.findAll());
-        return "estoque";
+        return "listaProdutos";
     }
 
-
     @GetMapping("/novo")
-    public String NovoProduto(Model model) {
+    public String novoProdutoForm(Model model) {
         model.addAttribute("produto", new Produto());
-        return "formulario";
+        return "formularioProduto";
     }
 
     @PostMapping("/novo")
-    public String salvarNovoProduto(@RequestBody Produto produto) {
+    public String salvarNovoProduto(@ModelAttribute Produto produto) {
         produtoRepository.save(produto);
-        return "estoque";
+        return "redirect:/produtos";
     }
 
     @GetMapping("/editar/{id}")
@@ -46,16 +40,16 @@ public class ProdutoController {
     }
 
     @PostMapping("/editar/{id}")
-    public String atualizarProduto(@PathVariable Long id, @ModelAttribute Produto produto) {
+    public String salvarEdicaoProduto(@PathVariable Long id, @ModelAttribute Produto produto) {
         produto.setId(id);
         produtoRepository.save(produto);
-        return "redirect:/estoque";
+        return "redirect:/produtos";
     }
 
     @GetMapping("/excluir/{id}")
     public String excluirProduto(@PathVariable Long id) {
         produtoRepository.deleteById(id);
-        return "redirect:/estoque";
+        return "redirect:/produtos";
     }
-
 }
+
