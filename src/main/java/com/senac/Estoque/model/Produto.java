@@ -15,14 +15,16 @@ public class Produto {
     private long id;
     private String nome;
     private double preco;
-    private String quantidade;
+    private double quantidade;
 
+    private String unidadeDeMedida;
     public Produto(){}
 
-    public Produto( String nome, double preco, String quantidade) {
+    public Produto( String nome, double preco, double quantidade, String unidadeDeMedida) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
+        this.unidadeDeMedida = unidadeDeMedida;
     }
 
     public long getId() {
@@ -49,11 +51,19 @@ public class Produto {
         this.preco = preco;
     }
 
-    public String getQuantidade() {
+    public double getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(String quantidade) {
+    public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public String getUnidadeDeMedida() {
+        return unidadeDeMedida;
+    }
+
+    public void setUnidadeDeMedida(String unidadeDeMedida) {
+        this.unidadeDeMedida = unidadeDeMedida;
     }
 }
