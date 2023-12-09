@@ -6,28 +6,28 @@
     <link rel="stylesheet" type="text/css" href="Estoque/src/main/resources/static/style.css">
 </head>
 <body>
-    <h2>Lista de Produtos</h2>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Unidade de Medida</th>
-            <th>Ações</th>
-        </tr>
-        <tr th:each="produto : ${produtos}">
-            <td th:text="${produto.id}"></td>
-            <td th:text="${produto.nome}"></td>
-            <td th:text="${produto.preco}"></td>
-            <td th:text="${produto.quantidade}"></td>
-            <td th:text="${produto.um}"></td>
-            <td>
-                <a th:href="@{/produtos/editar/{id}(id=${produto.id})}">Editar</a>
-                <a th:href="@{/produtos/excluir/{id}(id=${produto.id})}">Excluir</a>
-            </td>
-        </tr>
-    </table>
-    <a th:href="@{/produtos/novo}">Adicionar Novo Produto</a>
+<h2>Lista de Produtos</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Unidade de Medida</th>
+        <th>Ações</th>
+    </tr>
+    <tr th:each="produto : ${produtos}">
+        <td th:text="${produto.id}"></td>
+        <td th:text="${produto.nome}"></td>
+        <td th:text="${produto.preco}"></td>
+        <td th:text="${produto.quantidade}"></td>
+        <td th:text="${produto.unidadeDeMedida}"></td>
+        <td>
+            <a th:href="@{/produtos/editar/{id}(id=${produto.id})}">Editar</a>
+            <a th:href="@{/produtos/excluir/{id}(id=${produto.id})}">Excluir</a>
+        </td>
+    </tr>
+</table>
+<a th:href="@{/produtos/novo}">Adicionar Novo Produto</a>
 </body>
 </html>
