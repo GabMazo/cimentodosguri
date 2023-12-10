@@ -46,6 +46,8 @@ public class ProdutoController {
         return "redirect:/produtos";
     }
 
+
+
     @GetMapping("/excluir/{id}")
     public String excluirProduto(@PathVariable Long id) {
         produtoRepository.deleteById(id);
