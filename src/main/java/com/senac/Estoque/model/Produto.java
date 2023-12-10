@@ -20,6 +20,14 @@ public class Produto {
     private String unidadeDeMedida;
     public Produto(){}
 
+    public Produto(long id, String nome, double preco, double quantidade, String unidadeDeMedida) {
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+        this.unidadeDeMedida = unidadeDeMedida;
+    }
+
     public Produto( String nome, double preco, double quantidade, String unidadeDeMedida) {
         this.nome = nome;
         this.preco = preco;

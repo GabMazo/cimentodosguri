@@ -10,7 +10,7 @@
 
 <h2>Formulário de Produto</h2>
 
-<form th:object="${produto}" method="post" th:action="@{/produtos/novo}">
+<form th:object="${produto}" th:action="${produto.id} ? @{'/produtos/editar/' + ${produto.id}} : @{'/produtos/novo'}" method="post">
   <div>
     <label for="nome">Nome do Produto:</label>
     <input type="text" id="nome" name="nome" th:field="*{nome}" required>
@@ -27,13 +27,8 @@
   </div>
 
   <div>
-    <label for="opcoes">Unidade de medida:</label>
-    <select id="opcoes" name="opcoes">
-        <option value="opcao1">Kg</option>
-        <option value="opcao2">m</option>
-        <option value="opcao3">Caixa</option>
-        <!-- Adicione mais opções se necessário -->
-    </select>
+    <label for="unidadeDeMedida">UnidadeDeMedida:</label>
+    <input type="text" id="unidadeDeMedida" name="unidadeDeMedida" th:field="*{unidadeDeMedida}" required>
   </div>
 
   <div>
