@@ -1,52 +1,49 @@
-/* style.css */
+/* Estoque/src/main/resources/static/style.css */
 
-/* Estilos para o corpo da página */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
-
-/* Estilos para o título */
+/* Estilos para o título h2 */
 h2 {
-  color: #333;
-  text-align: center;
-}
+    text-align: center;
+    color: #333;
+  }
 
-/* Estilos para o formulário */
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+  /* Estilos para a tabela */
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
 
-/* Estilos para os rótulos */
-label {
-  font-weight: bold;
-}
+  table, th, td {
+    border: 1px solid #333;
+  }
 
-/* Estilos para os campos de entrada */
-.form-control {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
 
-/* Estilos para o botão */
-.btn-primary {
-  padding: 10px 20px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  /* Estilos para os links de ação */
+  a {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 3px;
+  }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-}
+  a[href*="editar"] {
+    background-color: #007bff;
+  }
+
+  a[href*="excluir"] {
+    background-color: #dc3545;
+  }
+
+  a[href*="novo"] {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #28a745;
+  }
+

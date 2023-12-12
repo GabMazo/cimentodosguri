@@ -6,11 +6,30 @@
     <title>Lista de Produtos</title>
     <link href="bootstrap-5.3.2/bootstrap.css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Estilizando o cabeçalho */
+        .header {
+            background-color: #24aa7e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h2>Lista de Produtos</h2>
+        <div class="header">
+            <h2>Lista de Produtos</h2>
+        </div>
+        <h2>Adicione os produtos aqui:</h2>
 
         <table class="table table-striped">
             <thead>
@@ -31,17 +50,19 @@
                     <td th:text="${produto.quantidade}"></td>
                     <td th:text="${produto.unidadeDeMedida}"></td>
                     <td>
-                        <a href="@{/produtos/editar/{id}(id=${produto.id})}" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="@{/produtos/excluir/{id}(id=${produto.id})}" class="btn btn-danger btn-sm">Excluir</a>
+                        <a th:href="@{/produtos/editar/{id}(id=${produto.id})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/produtos/excluir/{id}(id=${produto.id})}" class="btn btn-danger btn-sm">Excluir</a>
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <a href="@{/produtos/novo}" class="btn btn-success">Adicionar Novo Produto</a>
+        <a th:href="@{/produtos/novo}" class="btn btn-success">Adicionar Novo Produto</a>
     </div>
 
-    <script src="bootstrap-5.3.2/bootstrap.js/bootstrap.min.js"></script>
+</div>
+
+<script src="bootstrap-5.3.2/bootstrap.js/bootstrap.min.js"></script>
 </body>
 
 </html>
