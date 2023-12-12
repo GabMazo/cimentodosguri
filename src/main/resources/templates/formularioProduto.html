@@ -15,9 +15,9 @@
 
         <h2 style="text-align: center; color: #333; margin-bottom: 20px;">Formulário de Produto</h2>
 
-        <form action="/produtos/novo" method="post">
+      
 
-        <form action="/produtos/novo" method="post">
+        <form action="/produtos/novo" method="post" th:action="${produto.id} ? @{'/produtos/editar/' + ${produto.id}} : @{'/produtos/novo'}">
             <div style="margin-bottom: 15px;">
                 <label for="nome" style="font-weight: bold;">Nome do Produto:</label>
                 <input type="text" id="nome" name="nome" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" required>
